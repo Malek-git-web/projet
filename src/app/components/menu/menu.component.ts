@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -9,5 +9,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
+  router:Router=inject(Router);
+  onAdmin(){
+    this.router.navigate(['/admin']);
+  }
 
 }

@@ -15,12 +15,23 @@ import { ChanelHComponent } from './components/chanel-h/chanel-h.component';
 import { LuisvittonHComponent } from './components/luisvitton-h/luisvitton-h.component';
 import { PradaHComponent } from './components/prada-h/prada-h.component';
 import { CelineHComponent } from './components/celine-h/celine-h.component';
-import { PolaineHComponent } from './components/polaine-h/polaine-h.component';
+
+import { AproposComponent } from './components/apropos/apropos.component';
+import { DetailsComponent } from './components/details/details.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { ControlsComponent } from './components/controls/controls.component';
+import { AjouterSacComponent } from './components/ajouter-sac/ajouter-sac.component';
+
+
+import { ModifierSacComponent } from './components/modifier-sac/modifier-sac.component';
+import { SupprimerSacComponent } from './components/supprimer-sac/supprimer-sac.component';
+import { ConsulterSacComponent } from './components/consulter-sac/consulter-sac.component';
 
 export const routes: Routes = [
     {path:'accueil',title:'accueil',component:AccueilComponent},
     {path:'femme',title:'femme',component:FemmeComponent},
     {path:'homme',title:'homme',component:HommeComponent},
+    {path:'apropos',title:'a propos de nous',component:AproposComponent},
     {path:'hermes.f',title:'hermes-f',component:HermesFComponent},
     {path:'chanel.f',title:'chanel-f',component:ChanelFComponent},
     {path: 'louis-vuitton.f', title: 'louis-vuitton-f', component: LuisvittonFComponent },
@@ -32,7 +43,26 @@ export const routes: Routes = [
     {path: 'louis-vuitton.h', title: 'louis-vuitton-h', component: LuisvittonHComponent },
     {path: 'prada.h', title: 'prada-h', component: PradaHComponent },
     {path: 'celine.h', title: 'celine-h', component: CelineHComponent },
-    {path: 'polene.h', title: 'polene-h', component: PolaineHComponent },
+    {path: 'accueil/:sac', component: DetailsComponent},
+    {path: 'femme/:sac', component: DetailsComponent},
+    {path: 'homme/:sac', component: DetailsComponent},
+    {path: 'hermes.f/:sac', component: DetailsComponent},
+    {path: 'chanel.f/:sac', component: DetailsComponent},
+    {path: 'louis-vuitton.f/:sac', component: DetailsComponent},
+    {path: 'prada.f/:sac', component: DetailsComponent},
+    {path: 'celine.f/:sac', component: DetailsComponent},
+    {path: 'polene.f/:sac', component: DetailsComponent},
+    {path: 'hermes.h/:sac', component: DetailsComponent},
+    {path: 'chanel.h/:sac', component: DetailsComponent},
+    {path: 'louis-vuitton.h/:sac', component: DetailsComponent},
+    {path: 'prada.h/:sac', component: DetailsComponent},
+    {path: 'celine.h/:sac', component: DetailsComponent},
+    {path: 'admin',title:'Admin', component: AdminComponent},
+    {path: 'controls',title:'controles', component: ControlsComponent},
+    {path: 'ajouter-sac',title:'ajouter', component: AjouterSacComponent},
+    {path: 'modifier-sac',title:'modifier', component: ModifierSacComponent},
+    {path: 'supprimer-sac',title:'supprimer', component: SupprimerSacComponent},
+    {path: 'consulter-sac',title:'Consulter', component: ConsulterSacComponent},
     {path:'',redirectTo:'accueil',pathMatch:'full'},
     {path:'**',title:'error',component:ErrorComponent}
 ];

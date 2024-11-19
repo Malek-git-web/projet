@@ -1,12 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { Produit } from '../../produit';
+import { ProduitsService } from '../../produits.service';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-celine-h',
   standalone: true,
-  imports: [],
+  imports: [RouterLink,RouterLinkActive],
   templateUrl: './celine-h.component.html',
   styleUrl: './celine-h.component.css'
 })
-export class CelineHComponent {
+
+export class CelineHComponent implements OnInit  {
+  router:Router=inject(Router);
+  onHomme(){
+    this.router.navigate(['/femme']);
+  }
+  produitSrvice:ProduitsService=inject(ProduitsService);
+  sacsCeline: Produit[]=[];
+  ngOnInit(): void {
+    this.produitSrvice.getProducts().subscribe(
+      data=> this.sacsCeline=data.filter((elt)=> elt.marque=="Céline" && elt.categorie=="Homme")
+    )
+  }
+  
 
 }

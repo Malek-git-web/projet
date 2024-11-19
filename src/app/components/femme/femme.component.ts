@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ProduitsService } from '../../produits.service';
+import { Produit } from '../../produit';
 
 @Component({
   selector: 'app-femme',
@@ -8,6 +10,14 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './femme.component.html',
   styleUrl: './femme.component.css'
 })
-export class FemmeComponent {
+export class FemmeComponent implements OnInit  {
+  produitSrvice:ProduitsService=inject(ProduitsService);
+  sacsFemme: Produit[]=[];
+  ngOnInit(): void {
+    this.produitSrvice.getProducts().subscribe(
+      data=> this.sacsFemme=data.filter((elt)=> elt.categorie=="Femme")
+    )
+  }
+  
 
 }
