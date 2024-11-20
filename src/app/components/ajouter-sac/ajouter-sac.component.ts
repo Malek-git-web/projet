@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Produit } from '../../produit';
 import { ProduitsService } from '../../produits.service';
 import { Router } from '@angular/router';
@@ -12,35 +12,51 @@ import { Avis } from '../../avis';
   styleUrl: './ajouter-sac.component.css'
 })
 export class AjouterSacComponent implements OnInit {
+  sacs:Produit[]=[];
 productForm!:FormGroup;
 readonly formBuilder:FormBuilder=inject(FormBuilder);
   router:Router=inject(Router);
   readonly produitService:ProduitsService=inject(ProduitsService);
 ngOnInit(): void {
-  
+  this.produitService.getProducts().subscribe(
+    data=>this.sacs=data
+  )
   this.productForm=this.formBuilder.group(
     {
       id:[0],
-      nom: [''],
-      photo: [''],
-      categorie: [''],
-      prix: [0],
-      description: [''],
-      detail: [''],
-      promotion: [0],
-      dateDelancement: [''],
+      nom: ['',Validators.required],
+      photo: ['',Validators.required],
+      categorie: ['',Validators.required],//retourner categorie une liste de choix
+      prix: [0,[Validators.required,Validators.min(10)]],
+      description: ['',Validators.required],
+      detail: ['',Validators.required],
+      promotion: [0,Validators.required],
+      dateDelancement: ['',Validators.required],
       enStock: [false],
-      couleur: [''],
-      quantite: [1],
-      marque: [''],
+      couleur: ['',Validators.required],
+      quantite: [1,Validators.required],
+      marque: [''],//retourner marque une liste de choix
       Avis:[[]]
     }
   )
 
 }
+ test(n:number){
+  for(let elt of this.sacs){
+    if(elt.id===n){
+      return false
+    }
+      
+  }return true;
+}
  getRandomInt(min: number, max: number): number {
   // Utilisation de Math.random() pour générer un nombre aleatoire dans la plage min-max
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  let nvId= Math.floor(Math.random() * (max - min + 1)) + min;
+  while(!this.test(nvId)){
+    nvId=Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  return nvId;
+  
 }
 sac!:Produit;
 onSubmit(){
@@ -63,5 +79,13 @@ onAjouter(p:Produit){
 }
 onRetour(){
 this.router.navigate(['/controls']);
+}
+//les fonctions de contoles
+
+get nom(){
+  return this.productForm.get('nom');
+}
+get prix(){
+  return this.productForm.get('prix');
 }
 }

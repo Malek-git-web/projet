@@ -26,6 +26,7 @@ import { AjouterSacComponent } from './components/ajouter-sac/ajouter-sac.compon
 import { ModifierSacComponent } from './components/modifier-sac/modifier-sac.component';
 import { SupprimerSacComponent } from './components/supprimer-sac/supprimer-sac.component';
 import { ConsulterSacComponent } from './components/consulter-sac/consulter-sac.component';
+import { FilsComponent } from './components/fils/fils.component';
 
 export const routes: Routes = [
     {path:'accueil',title:'accueil',component:AccueilComponent},
@@ -63,6 +64,7 @@ export const routes: Routes = [
     {path: 'modifier-sac',title:'modifier', component: ModifierSacComponent},
     {path: 'supprimer-sac',title:'supprimer', component: SupprimerSacComponent},
     {path: 'consulter-sac',title:'Consulter', component: ConsulterSacComponent},
+    {path: 'fils',title:'fils', component: FilsComponent},
     {path:'',redirectTo:'accueil',pathMatch:'full'},
     {path:'**',title:'error',component:ErrorComponent}
 ];

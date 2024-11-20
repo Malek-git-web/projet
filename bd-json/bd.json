@@ -1,20 +1,19 @@
 {
-  "sacs": [
-    {
-      "id": "1",
-      "nom": "Birkin 30",
-      "categorie": "Femme",
-      "prix": 10000,
-      "description": "Sac iconique en cuir de veau.",
-      "detail": "Dimensions : 30 x 22 x 16 cm. Fabriqué en France.",
-      "promotion": 0,
-      "dateDeLancement": "2024-03-15",
-      "enStock": true,
-      "couleur": "Rouge",
-      "quantite": 5,
-      "marque": "Hermès",
-      "photo": "images/h1.jpg"
-    },
+  "sacs": [{
+    "id": "1",
+    "nom": "Birkin 30",
+    "categorie": "Femme",
+    "prix": 10000,
+    "description": "Sac iconique en cuir de veau.",
+    "detail": "Dimensions : 30 x 22 x 16 cm. Fabriqué en France.",
+    "promotion": 0,
+    "dateDeLancement": "2024-03-15",
+    "enStock": true,
+    "couleur": "Rouge",
+    "quantite": 5,
+    "marque": "Hermès",
+    "photo": "images/h1.jpg"
+  },
     {
       "id": "2",
       "nom": "Kelly 28",
@@ -579,21 +578,21 @@
       "description": "Sac en cuir pour homme, idéal pour les affaires. Design moderne et élégant.",
       "detail": "Ce sac en cuir véritable offre une grande capacité de rangement et un design sobre, parfait pour les professionnels.",
       "promotion": 10,
-      "dateDelancement": "2023-03-15T00:00:00Z",
+      "dateDeLancement": "2023-03-15T00:00:00Z",
       "enStock": true,
       "couleur": "Noir",
       "quantite": 10,
       "marque": "Céline",
       "avis": [
         {
-          "note": 4,
+          "nbEtoile": 4,
           "commentaire": "Très bon sac, mais un peu cher.",
-          "auteur": "John Doe"
+          "nomclient": "John Doe"
         },
         {
-          "note": 5,
+          "nbEtoile": 5,
           "commentaire": "Excellent produit, conforme à la description.",
-          "auteur": "Jane Smith"
+          "nomclient": "Jane Smith"
         }
       ]
     },
@@ -606,21 +605,21 @@
       "description": "Sac bandoulière en cuir pour homme, pratique et stylé.",
       "detail": "Ce sac compact et élégant est parfait pour un usage quotidien avec une touche de luxe.",
       "promotion": 5,
-      "dateDelancement": "2023-06-20T00:00:00Z",
+      "dateDeLancement": "2023-06-20T00:00:00Z",
       "enStock": true,
       "couleur": "Marron et Noir",
       "quantite": 15,
       "marque": "Céline",
       "avis": [
         {
-          "note": 3,
+          "nbEtoile": 3,
           "commentaire": "Sac de qualité, mais un peu trop petit.",
           "auteur": "Carlos M."
         },
         {
-          "note": 4,
+          "nbEtoile": 4,
           "commentaire": "J'adore, mais j'aurais préféré plus de poches.",
-          "auteur": "Alice T."
+          "nomclient": "Alice T."
         }
       ]
     },
@@ -633,16 +632,16 @@
       "description": "Sac à dos en cuir haut de gamme, pratique pour les voyages et le quotidien.",
       "detail": "Ce sac à dos combine luxe et fonctionnalité, idéal pour transporter vos affaires avec style.",
       "promotion": 0,
-      "dateDelancement": "2023-09-01T00:00:00Z",
+      "dateDeLancement": "2023-09-01T00:00:00Z",
       "enStock": false,
       "couleur": "Gris",
       "quantite": 0,
       "marque": "Céline",
       "avis": [
         {
-          "note": 5,
+          "nbEtoile": 5,
           "commentaire": "Le meilleur sac à dos que j'ai jamais eu. Très pratique et spacieux.",
-          "auteur": "Michel A."
+          "nomclient": "Michel A."
         }
       ]
     }

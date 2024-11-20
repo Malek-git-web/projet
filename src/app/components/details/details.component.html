@@ -1,88 +1,100 @@
-<div class="container mt-5">
-    
+<div [hidden]="!sac">
+  <div class="container mt-5">
     <div class="row">
-      
       <div class="col-md-4">
-        <img [src]="sac.photo"  class="img-fluid rounded shadow">
+        <img [src]="sac.photo" class="img-fluid rounded shadow" />
       </div>
-  
-    
+
       <div class="col-md-8">
         <h2>{{ sac.nom }}</h2>
         <p><strong>Marque:</strong> {{ sac.marque }}</p>
         <p><strong>Catégorie:</strong> {{ sac.categorie }}</p>
-        @if (sac.promotion===0) {
-            <div >
-                <p><strong>Prix:</strong>
-                 {{ sac.prix | currency }}</p>
-              </div>
-        }
-        @else if (sac.promotion>0) {
-            <div >
-                <p><strong>Prix:</strong> <span class="text-muted text-decoration-line-through">{{ sac.prix | currency }}</span> 
-                <span class="text-success">
-                    {{ sac.prix - (sac.prix * sac.promotion / 100) | currency }}</span></p>
-              </div>
-        }
-        
-           
-         
-       
+
+        <!-- Si promotion est active -->
+        <div [hidden]="sac.promotion <= 0">
+          <p>
+            <strong>Prix:</strong>
+            <span class="text-muted text-decoration-line-through">
+              {{ sac.prix | currency }}
+            </span>
+            <span class="text-success">
+              {{ sac.prix - (sac.prix * sac.promotion) / 100 | currency }}
+            </span>
+          </p>
+        </div>
+
+        <!-- Si pas de promotion -->
+        <div [hidden]="sac.promotion > 0">
+          <p><strong>Prix:</strong> {{ sac.prix | currency }}</p>
+        </div>
+
         <p><strong>Description:</strong> {{ sac.description }}</p>
         <p><strong>Détails:</strong> {{ sac.detail }}</p>
-  
         <p><strong>Couleur:</strong> {{ sac.couleur }}</p>
         <p><strong>Quantité en stock:</strong> {{ sac.quantite }}</p>
-        <p><strong>Disponibilité:</strong>
-            <span [ngClass]="{'text-danger': !sac.enStock, 'text-success': sac.enStock}">
-                @if(sac.enStock){ <p>En Stock</p>}
-                @else { <p>Rupture de Stock</p>}
-            
-            </span>
+
+        <p>
+          <strong>Disponibilité:</strong>
+          <span
+            [ngClass]="{
+              'text-danger': !sac.enStock,
+              'text-success': sac.enStock
+            }"
+          >
+            <span [hidden]="!sac.enStock">En Stock</span>
+            <span [hidden]="sac.enStock">Rupture de Stock</span>
+          </span>
         </p>
-        <p><strong>Date de lancement:</strong> {{ sac.dateDelancement | date: 'fullDate' }}</p>
-  
+
+        <p>
+          <strong>Date de lancement:</strong>
+          {{ sac.dateDeLancement | date : "fullDate" }}
+        </p>
+
         <div class="d-flex justify-content-between align-items-center">
-          <button class="btn btn-primary" [disabled]="!sac.enStock">Ajouter au panier</button>
-          @if(sac.avis.length>0){
-            <span >
-                <strong>Avis:</strong> {{ sac.avis.length }} <i class="bi bi-star-fill text-warning"></i>
-              </span>
-          }
-         
+          <button class="btn btn-dark" [disabled]="!sac.enStock">
+           Commander
+          </button>
+
+          <span [hidden]="sac.avis.length === 0">
+            <strong>Avis:</strong> {{ sac.avis.length }}
+            <i class="bi bi-star-fill text-warning"></i>
+          </span>
         </div>
       </div>
     </div>
-  
-    <hr>
-  
-  
-    @if(sac.avis.length>0){
-    <div >
-      <h4>Avis des utilisateurs</h4>
-      <div class="list-group">
-        <div  class="list-group-item">
-           @for (a of sac.avis; track $index) {
-            <h5 class="mb-1">{{ a.nomclient }}</h5>
-          <p class="mb-1">{{ a.commentaire }}</p>
-          <small>{{ a.dateCommentaire | date }}</small>
-          <div class="d-flex mt-2">
-            <span > 
-                @for (s of stars; track $index){
-                    @if(a.nbEtoile>= s){
-                        <i class="bi bi-star-fill "></i> }
-                    @if(a.nbEtoile< s)  {
-                        <i class="bi bi-star"></i> }
-                }
-               
-              </span>
-          </div>
-           } 
+
+   
+
+    <div [hidden]="sac.avis.length === 0">
+      <div>
+        <h4>Avis des utilisateurs</h4>
+        <div class="list-group">
+          @for (a of sac.avis; track $index) {
+
           
+          <div class="list-group-item" >
+            <h5 class="mb-1">{{ a.nomclient }}</h5>
+            <p class="mb-1">{{ a.commentaire }}</p>
+          
+            <div class="d-flex mt-2">
+              <span>
+                @for (s of stars; track $index) {
+                <span>
+                  <i
+                    class="bi"
+                    [ngClass]="a.nbEtoile >= s ? 'bi-star-fill' : 'bi-star'"
+                  ></i>
+                </span>}
+              </span>
+            </div>
+          </div>}
         </div>
+        <button class="btn btn-dark">Ajouter un avis</button>
       </div>
-    </div>}
+    </div>
   </div>
+</div>
   
 
   

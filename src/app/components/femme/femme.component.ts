@@ -2,11 +2,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ProduitsService } from '../../produits.service';
 import { Produit } from '../../produit';
+import { FilsComponent } from '../fils/fils.component';
 
 @Component({
   selector: 'app-femme',
   standalone: true,
-  imports: [RouterLink,RouterLinkActive],
+  imports: [RouterLink,RouterLinkActive,FilsComponent],
   templateUrl: './femme.component.html',
   styleUrl: './femme.component.css'
 })

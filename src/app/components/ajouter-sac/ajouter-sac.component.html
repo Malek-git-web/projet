@@ -9,7 +9,12 @@
         <input type="text"  class="form-control" formControlName="nom" />
         
       </div>
-  
+      
+       @if(nom?.errors?.['required'] && nom?.dirty){
+        <div class="alert alert-danger">
+             le champ Nom est Obligatoire
+        </div>
+       }
       <!-- Photo -->
       <div class="mb-3">
         <label class="form-label">URL de la Photo</label>
@@ -30,7 +35,15 @@
         <input type="number"class="form-control" formControlName="prix" />
         
       </div>
-  
+      @if(prix?.errors?.['required'] && prix?.dirty){
+        <div class="alert alert-danger">
+             le champ Prix est Obligatoire
+        </div>
+       }@else if (prix?.errors?.['min'] && prix?.dirty) {
+        <div class="alert alert-danger">
+          le champ Prix est Obligatoirement > 10
+     </div>
+       }
       <!-- Description -->
       <div class="mb-3">
         <label for="description" class="form-label">Description</label>
@@ -86,7 +99,7 @@
   
       <!-- Boutons Submit et Annuler -->
       <div class="d-flex justify-content-between">
-        <button type="submit"  class="btn btn-primary" >Ajouter</button>
+        <button type="submit"  class="btn btn-primary" [disabled]="productForm.invalid" >Ajouter</button>
         <button type="button" (click)="onEffacer()" class="btn btn-secondary">Annuler</button>
       </div>
     </form>

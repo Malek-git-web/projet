@@ -2,11 +2,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Produit } from '../../produit';
 import { ProduitsService } from '../../produits.service';
+import { FilsComponent } from "../fils/fils.component";
 
 @Component({
   selector: 'app-homme',
   standalone: true,
-  imports: [RouterLink,RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, FilsComponent],
   templateUrl: './homme.component.html',
   styleUrl: './homme.component.css'
 })
