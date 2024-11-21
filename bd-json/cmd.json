@@ -1,0 +1,36 @@
+{
+  "commandes": [
+    {
+      "id": "1",
+      "nom": "Jean Dupont",
+      "tel":" 26123456",
+      "quantite": 1,
+      "adresse": "12 rue des Lilas, Paris, 75000",
+      "idSac": 3
+    },
+    {
+      "id": "2",
+      "nom": "Marie Lemoine",
+      "tel": "26543210",
+      "quantite": 1,
+      "adresse": "55 avenue des Champs, Lyon, 69000",
+      "idSac": 9
+    },
+    {
+      "id": "3",
+      "nom": "Paul Martin",
+      "tel": "27456789",
+      "quantite": 1,
+      "adresse": "28 rue de la Paix, Marseille, 13000",
+      "idSac": 23
+    },
+    {
+      "id": 89907,
+      "nom": "malek",
+      "tel": "25087448",
+      "adresse": "ariana",
+      "quantite": 1,
+      "idSac": "1"
+    }
+  ]
+}

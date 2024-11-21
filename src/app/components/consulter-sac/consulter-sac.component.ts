@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Produit } from '../../produit';
-import { ProduitsService } from '../../produits.service';
+import { Produit } from '../../model/produit';
+import { ProduitsService } from '../../services/produits.service';
 
 @Component({
   selector: 'app-consulter-sac',

@@ -1,19 +1,22 @@
 {
-  "sacs": [{
-    "id": "1",
-    "nom": "Birkin 30",
-    "categorie": "Femme",
-    "prix": 10000,
-    "description": "Sac iconique en cuir de veau.",
-    "detail": "Dimensions : 30 x 22 x 16 cm. Fabriqué en France.",
-    "promotion": 0,
-    "dateDeLancement": "2024-03-15",
-    "enStock": true,
-    "couleur": "Rouge",
-    "quantite": 5,
-    "marque": "Hermès",
-    "photo": "images/h1.jpg"
-  },
+  "sacs": [
+    {
+      "id": "1",
+      "nom": "Birkin 30",
+      "categorie": "Femme",
+      "prix": 9000,
+      "description": "Sac iconique en cuir de veau.",
+      "detail": "Dimensions : 30 x 22 x 16 cm. Fabriqué en France.",
+      "promotion": 50,
+      "dateDeLancement": "2024-03-15",
+      "enStock": true,
+      "couleur": "Rouge",
+      "quantite": 5,
+      "marque": "Hermès",
+      "photo": "images/h1.jpg",
+      "dateDelancement": "2024-03-15",
+      "Avis": []
+    },
     {
       "id": "2",
       "nom": "Kelly 28",
@@ -628,7 +631,7 @@
       "nom": "Sac Céline Homme Backpack",
       "photo": "images/c50.jpg",
       "categorie": "Homme",
-      "prix": 2000,
+      "prix": 20000,
       "description": "Sac à dos en cuir haut de gamme, pratique pour les voyages et le quotidien.",
       "detail": "Ce sac à dos combine luxe et fonctionnalité, idéal pour transporter vos affaires avec style.",
       "promotion": 0,
@@ -637,13 +640,13 @@
       "couleur": "Gris",
       "quantite": 0,
       "marque": "Céline",
-      "avis": [
-        {
-          "nbEtoile": 5,
-          "commentaire": "Le meilleur sac à dos que j'ai jamais eu. Très pratique et spacieux.",
-          "nomclient": "Michel A."
-        }
-      ]
+     "avis": [
+      {
+        "nbEtoile": 5,
+        "commentaire": "Le meilleur sac à dos que j'ai jamais eu. Très pratique et spacieux.",
+        "nomclient": "Michel A."
+      }
+    ]
     }
   ]
 }

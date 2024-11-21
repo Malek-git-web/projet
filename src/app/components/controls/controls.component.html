@@ -12,6 +12,9 @@
           <li class="nav-item">
             <button class="btn btn-danger nav-link" (click)="onSuppSac()">Supprimer un Sac</button>
           </li>
+          <li class="nav-item">
+            <button class="btn btn-danger nav-link" (click)="onCommandes()">Consulter les commandes</button>
+          </li>
         </ul>
       </div>
     </div>
@@ -40,7 +43,7 @@
                
                 }  </div>
             <div class="d-flex justify-content-between">
-              <button class="btn btn-warning" >
+              <button class="btn btn-warning" (click)="onModifSac(sac.id)" >
                 <i class="bi bi-pencil"></i> Modifier
               </button>
               <button class="btn btn-danger" (click)="onDeleteSac(sac.id)">

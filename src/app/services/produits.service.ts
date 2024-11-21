@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
-import { Produit } from './produit';
-import { Avis } from './avis';
+import { Produit } from '../model/produit';
+import { Avis } from '../model/avis';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 const URL="http://localhost:3000/sacs";

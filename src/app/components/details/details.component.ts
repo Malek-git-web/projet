@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ProduitsService } from '../../produits.service';
-import { ActivatedRoute } from '@angular/router';
-import { Produit } from '../../produit';
+import { ProduitsService } from '../../services/produits.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Produit } from '../../model/produit';
 import { CommonModule, CurrencyPipe, DatePipe, NgClass } from '@angular/common';
 
 @Component({
@@ -12,7 +12,7 @@ import { CommonModule, CurrencyPipe, DatePipe, NgClass } from '@angular/common';
   styleUrl: './details.component.css'
 })
 export class DetailsComponent implements OnInit {
-
+router:Router=inject(Router);
 produitService:ProduitsService=inject(ProduitsService);
 activatedRoute:ActivatedRoute=inject(ActivatedRoute);
 id!:number;
@@ -33,6 +33,10 @@ ngOnInit(): void {
     
     
   )
+
+}
+onCommender(){
+this.router.navigate(['/commande/'+this.id])
 }
 
 

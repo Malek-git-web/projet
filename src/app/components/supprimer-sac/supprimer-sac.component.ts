@@ -1,8 +1,8 @@
 import { NgClass } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Produit } from '../../produit';
-import { ProduitsService } from '../../produits.service';
+import { Produit } from '../../model/produit';
+import { ProduitsService } from '../../services/produits.service';
 import { Router } from '@angular/router';
 
 @Component({

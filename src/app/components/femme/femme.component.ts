@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { ProduitsService } from '../../produits.service';
-import { Produit } from '../../produit';
+import { ProduitsService } from '../../services/produits.service';
+import { Produit } from '../../model/produit';
 import { FilsComponent } from '../fils/fils.component';
 
 @Component({

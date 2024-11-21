@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ProduitsService } from '../../produits.service';
-import { Produit } from '../../produit';
+import { ProduitsService } from '../../services/produits.service';
+import { Produit } from '../../model/produit';
 import { Router, RouterLink } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 import { FilsComponent } from "../fils/fils.component";
@@ -25,11 +25,7 @@ ngOnInit(): void {
 }
 
 
-onModifier(id:number,p:Produit){
-  this.produitService.patchProduct(id,p).subscribe(
-    data=>console.log(data)
-  );
-}
+
 onDeleteSac(id:number){
   
     this.produitService.deleteProduct(id).subscribe( data=>
@@ -51,8 +47,8 @@ changeMdp(nvMdp:any){
 onAddSac(){
   this.router.navigate(['/ajouter-sac']);
 }
-onModifSac(){
-  this.router.navigate(['/modifier-sac']);
+onModifSac(id:number){
+  this.router.navigate(['/modifier-sac/'+id]);
 }
 onSuppSac(){
   this.router.navigate(['/supprimer-sac']);
@@ -60,5 +56,8 @@ onSuppSac(){
 
 onConsultSac(){
   this.router.navigate(['/consulter-sac']);
+}
+onCommandes(){
+  this.router.navigate(['/commandes']);
 }
 }

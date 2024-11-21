@@ -27,6 +27,9 @@ import { ModifierSacComponent } from './components/modifier-sac/modifier-sac.com
 import { SupprimerSacComponent } from './components/supprimer-sac/supprimer-sac.component';
 import { ConsulterSacComponent } from './components/consulter-sac/consulter-sac.component';
 import { FilsComponent } from './components/fils/fils.component';
+import { CommandeComponent } from './components/commande/commande.component';
+import { ListeCommandeComponent } from './components/liste-commande/liste-commande.component';
+
 
 export const routes: Routes = [
     {path:'accueil',title:'accueil',component:AccueilComponent},
@@ -60,10 +63,14 @@ export const routes: Routes = [
     {path: 'celine.h/:sac', component: DetailsComponent},
     {path: 'admin',title:'Admin', component: AdminComponent},
     {path: 'controls',title:'controles', component: ControlsComponent},
+    {path: 'controls/:sac',title:'controles', component: ModifierSacComponent},
     {path: 'ajouter-sac',title:'ajouter', component: AjouterSacComponent},
-    {path: 'modifier-sac',title:'modifier', component: ModifierSacComponent},
+    {path: 'modifier-sac/:sac',title:'modifier', component: ModifierSacComponent},
     {path: 'supprimer-sac',title:'supprimer', component: SupprimerSacComponent},
     {path: 'consulter-sac',title:'Consulter', component: ConsulterSacComponent},
+    {path: 'commande',title:'commande', component: CommandeComponent},
+    {path:'commandes',title:'liste des commandes',component:ListeCommandeComponent},
+    {path: 'commande/:id',title:'commande', component: CommandeComponent},
     {path: 'fils',title:'fils', component: FilsComponent},
     {path:'',redirectTo:'accueil',pathMatch:'full'},
     {path:'**',title:'error',component:ErrorComponent}

@@ -1,9 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Produit } from '../../produit';
-import { ProduitsService } from '../../produits.service';
+import { Produit } from '../../model/produit';
+import { ProduitsService } from '../../services/produits.service';
 import { Router } from '@angular/router';
-import { Avis } from '../../avis';
+import { Avis } from '../../model/avis';
 @Component({
   selector: 'app-ajouter-sac',
   standalone: true,
@@ -31,7 +31,7 @@ ngOnInit(): void {
       description: ['',Validators.required],
       detail: ['',Validators.required],
       promotion: [0,Validators.required],
-      dateDelancement: ['',Validators.required],
+      dateDeLancement: ['',Validators.required],
       enStock: [false],
       couleur: ['',Validators.required],
       quantite: [1,Validators.required],
